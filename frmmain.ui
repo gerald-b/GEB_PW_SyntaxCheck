@@ -16,6 +16,9 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
+     <widget class="QListWidget" name="lstPassword"/>
+    </item>
+    <item>
      <widget class="QGroupBox" name="gbxOptions">
       <property name="title">
        <string>Options</string>
