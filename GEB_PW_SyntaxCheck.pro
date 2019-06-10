@@ -29,7 +29,8 @@ SOURCES += \
         frmmain.cpp
 
 HEADERS += \
-        frmmain.hpp
+        frmmain.hpp \
+    icheck.hpp
 
 FORMS += \
         frmmain.ui
