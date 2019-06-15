@@ -2,6 +2,8 @@
 #define FRMMAIN_HPP
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QCloseEvent>
 
 namespace Ui {
 class FrmMain;
@@ -14,6 +16,9 @@ class FrmMain : public QMainWindow
 public:
     explicit FrmMain(QWidget *parent = nullptr);
     ~FrmMain();
+
+private slots:
+    void closeEvent (QCloseEvent *event);
 
 private:
     Ui::FrmMain *ui;

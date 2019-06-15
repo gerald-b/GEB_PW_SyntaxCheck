@@ -18,6 +18,22 @@ FrmMain::~FrmMain()
     delete ui;
 }
 
+void FrmMain::closeEvent(QCloseEvent *event)
+{
+    QMessageBox::StandardButton resBtn =
+        QMessageBox::question(this,tr("Question"),tr("Do you really want to exit?"),
+            QMessageBox::No | QMessageBox::Yes,
+            QMessageBox::Yes);
+    if (resBtn != QMessageBox::Yes)
+    {
+        event->ignore();
+    }
+    else
+    {
+        event->accept();
+    }
+}
+
 void FrmMain::updateStatus()
 {
     if (ui->lstPassword->count() == 1)
