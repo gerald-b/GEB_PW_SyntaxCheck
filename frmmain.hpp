@@ -2,6 +2,9 @@
 #define FRMMAIN_HPP
 
 #include <QMainWindow>
+#include <QFile>
+#include <QFileDialog>
+#include <QMessageBox>
 
 namespace Ui {
 class FrmMain;
@@ -14,6 +17,9 @@ class FrmMain : public QMainWindow
 public:
     explicit FrmMain(QWidget *parent = nullptr);
     ~FrmMain();
+
+private slots:
+    void on_actionImport_triggered();
 
 private:
     Ui::FrmMain *ui;
