@@ -55,7 +55,9 @@ void FrmMain::on_actionImport_triggered()
         while (!fileToRead.atEnd()) {
             QByteArray line = fileToRead.readLine();
             QString s = QString(line);
-            s = s.replace("\n","");
+            s = s.replace("\r\n",""); // for win
+            s = s.replace("\n","");   // for lin
+            s = s.replace("\r","");   // for mac
             if (myNewEntries.contains(s))
             {
                 if (isFirstTimeDupEntry)
