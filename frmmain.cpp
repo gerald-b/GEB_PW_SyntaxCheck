@@ -92,6 +92,7 @@ void FrmMain::on_actionImport_triggered()
         QMessageBox::information(this,tr("Information"),
                                  tr("Import successfull")
                                  );
+        this->updateStatus();
     }
 }
 
