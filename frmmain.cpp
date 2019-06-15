@@ -121,7 +121,13 @@ void FrmMain::on_actionExport_triggered()
         }
         for(int i=0; i<ui->lstPassword->count();++i)
         {
+#ifdef __linux__
             writeFile.write(ui->lstPassword->item(i)->text().toUtf8() + "\n");
+#elif  WIN32 || __WIN32 || __WIN32__
+            writeFile.write(ui->lstPassword->item(i)->text().toUtf8() + "\r\n");
+#else
+            writeFile.write(ui->lstPassword->item(i)->text().toUtf8() + "\r");
+#endif
         }
         writeFile.flush();
         writeFile.close();
