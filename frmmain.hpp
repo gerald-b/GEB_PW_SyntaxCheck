@@ -23,6 +23,7 @@ private slots:
 
 private:
     Ui::FrmMain *ui;
+    void updateStatus();
 };
 
 #endif // FRMMAIN_HPP

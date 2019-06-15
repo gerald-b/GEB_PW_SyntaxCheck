@@ -12,6 +12,8 @@ FrmMain::FrmMain(QWidget *parent) :
     /* Automated connects */
     /*** DO NOT UNCOMMENT ***/
     // connect(ui->actionImport,&QAction::triggered,this,&FrmMain::on_actionImport_triggered);
+
+    this->updateStatus();
 }
 
 FrmMain::~FrmMain()
@@ -90,5 +92,17 @@ void FrmMain::on_actionImport_triggered()
         QMessageBox::information(this,tr("Information"),
                                  tr("Import successfull")
                                  );
+    }
+}
+
+void FrmMain::updateStatus()
+{
+    if (ui->lstPassword->count() == 1)
+    {
+        ui->statusBar->showMessage(QString::number(ui->lstPassword->count()) + " " + tr(" Entry"));
+    }
+    else
+    {
+        ui->statusBar->showMessage(QString::number(ui->lstPassword->count()) + " " + tr(" Entries"));
     }
 }
