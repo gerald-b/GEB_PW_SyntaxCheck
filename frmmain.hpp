@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::FrmMain *ui;
+    void updateStatus();
 };
 
 #endif // FRMMAIN_HPP
