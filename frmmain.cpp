@@ -9,6 +9,7 @@ FrmMain::FrmMain(QWidget *parent) :
     /* Connects for the Menue */
     connect(ui->actionExit,&QAction::triggered,this,&FrmMain::close);
 
+    this->setWindowTitle(tr("GEB_PW_SyntaxCheck"));
     this->updateStatus();
 }
 
