@@ -12,6 +12,7 @@ FrmMain::FrmMain(QWidget *parent) :
     /* Automated connects */
     /*** DO NOT UNCOMMENT ***/
     // connect(ui->actionImport,&QAction::triggered,this,&FrmMain::on_actionImport_triggered);
+    // connect(ui->actionExport,&QAction::triggered,this,&FrmMain::on_actionExport_triggered);
 
     this->updateStatus();
 }
@@ -106,4 +107,24 @@ void FrmMain::updateStatus()
     {
         ui->statusBar->showMessage(QString::number(ui->lstPassword->count()) + " " + tr(" Entries"));
     }
+}
+
+void FrmMain::on_actionExport_triggered()
+{
+    QString fileName = QFileDialog::getSaveFileName(this,tr("Save"),"",tr("Text files (*.txt);;CSV (*.csv)"));
+    if (!fileName.isEmpty())
+    {
+        QFile writeFile(fileName);
+        if (!writeFile.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            return;
+        }
+        for(int i=0; i<ui->lstPassword->count();++i)
+        {
+            writeFile.write(ui->lstPassword->item(i)->text().toUtf8() + "\n");
+        }
+        writeFile.flush();
+        writeFile.close();
+    }
+    QMessageBox::information(this,tr("Information"),tr("Export successfully finished"));
 }
