@@ -6,7 +6,14 @@
 class chkPWLength : public iCheck
 {
 public:
-    chkPWLength();
+    chkPWLength(int minLength, int maxLength);
+private:
+    int lMax;
+    int lMin;
+    void setLMax(int maxLength);
+    int getLMax();
+    void setLMin(int minLength);
+    int getLMin();
 };
 
 #endif // CHKPWLENGTH_HPP
