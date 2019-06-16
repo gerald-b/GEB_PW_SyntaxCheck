@@ -6,6 +6,16 @@ chkPWLength::chkPWLength(int minLength, int maxLength)
     this->setLMax(maxLength);
 }
 
+bool chkPWLength::check(QString s)
+{
+    if (s.length() >= this->getLMin() &&
+        s.length() <= this->getLMax())
+    {
+        return true;
+    }
+    return false;
+}
+
 void chkPWLength::setLMax(int maxLength)
 {
     this->lMax = maxLength;

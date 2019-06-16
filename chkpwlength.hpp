@@ -7,6 +7,7 @@ class chkPWLength : public iCheck
 {
 public:
     chkPWLength(int minLength, int maxLength);
+    bool check(QString s) override;
 private:
     int lMax;
     int lMin;
