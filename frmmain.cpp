@@ -13,6 +13,7 @@ FrmMain::FrmMain(QWidget *parent) :
     /*** DO NOT UNCOMMENT ***/
     // connect(ui->actionImport,&QAction::triggered,this,&FrmMain::on_actionImport_triggered);
     // connect(ui->actionExport,&QAction::triggered,this,&FrmMain::on_actionExport_triggered);
+    // connect(ui->actionCheck,&QAction::triggered,this,&FrmMain::on_actionCheck_triggered);
 
     this->updateStatus();
 }
@@ -135,4 +136,32 @@ void FrmMain::on_actionExport_triggered()
         writeFile.close();
     }
     QMessageBox::information(this,tr("Information"),tr("Export successfully finished"));
+}
+
+void FrmMain::on_actionCheck_triggered()
+{
+    iCheck *checkrun = nullptr;
+    if (ui->lstPassword->count() == 0)
+    {
+        QMessageBox::warning(this,tr("Warning"),tr("No entries to check"));
+        return;
+    }
+    for(int i=0; i < ui->lstPassword->count(); ++i)
+    {
+        ui->lstPassword->item(i)->setBackground(Qt::white);
+
+        // CHKPWLENGTH
+        if (ui->cbxPWLength->isChecked())
+        {
+            checkrun = new ChkPWLength(ui->sbxPWMinLength->value(),ui->sbxPWMaxLength->value());
+
+            if (!checkrun->check(ui->lstPassword->item(i)->text()))
+            {
+                ui->lstPassword->item(i)->setBackground(Qt::red);
+            }
+
+            delete checkrun;
+        }
+    }
+    QMessageBox::information(this,tr("Information"),tr("Check successfully finished"));
 }

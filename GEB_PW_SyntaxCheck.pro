@@ -26,11 +26,13 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        frmmain.cpp
+        frmmain.cpp \
+    chkpwlength.cpp
 
 HEADERS += \
         frmmain.hpp \
-    icheck.hpp
+    icheck.hpp \
+    chkpwlength.hpp
 
 FORMS += \
         frmmain.ui
