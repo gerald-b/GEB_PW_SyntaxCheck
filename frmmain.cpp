@@ -139,7 +139,11 @@ void FrmMain::on_actionExport_triggered()
 void FrmMain::on_actionCheck_triggered()
 {
     iCheck *checkrun = nullptr;
-
+    if (ui->lstPassword->count() == 0)
+    {
+        QMessageBox::warning(this,tr("Warning"),tr("No entries to check"));
+        return;
+    }
     for(int i=0; i < ui->lstPassword->count(); ++i)
     {
         ui->lstPassword->item(i)->setBackground(Qt::white);
@@ -157,4 +161,5 @@ void FrmMain::on_actionCheck_triggered()
             delete checkrun;
         }
     }
+    QMessageBox::information(this,tr("Information"),tr("Check successfully finished"));
 }
