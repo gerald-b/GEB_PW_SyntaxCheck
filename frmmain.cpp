@@ -35,16 +35,18 @@ void FrmMain::on_actionImport_triggered()
             QMessageBox::critical(this,tr("Error"),tr("Error during opening the file: ") + fileToRead.errorString());
             return;
         }
-        int resReplace = QMessageBox::question(this,tr("Question"),
-                                               tr("Do you want to replace or keep the list entries?"),
-                                               tr("Replace"),
-                                               tr("Keep")
-                                               );
-        if (0 == resReplace) // replace == 0 || keep == 1
+        if (ui->lstPassword->count() > 0)
         {
-            ui->lstPassword->clear();
+            int resReplace = QMessageBox::question(this,tr("Question"),
+                                                   tr("Do you want to replace or keep the list entries?"),
+                                                   tr("Replace"),
+                                                   tr("Keep")
+                                                   );
+            if (0 == resReplace) // replace == 0 || keep == 1
+            {
+                ui->lstPassword->clear();
+            }
         }
-
 
         QList<QString> myNewEntries;
         for (int i=0; i< ui->lstPassword->count(); ++i)
