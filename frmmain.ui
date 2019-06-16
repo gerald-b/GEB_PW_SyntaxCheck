@@ -136,6 +136,8 @@ font-weight:bold;</string>
     <property name="title">
      <string>List entries</string>
     </property>
+    <addaction name="actionCheck"/>
+    <addaction name="separator"/>
     <addaction name="actionImport"/>
     <addaction name="actionExport"/>
    </widget>
@@ -164,6 +166,11 @@ font-weight:bold;</string>
   <action name="actionExport">
    <property name="text">
     <string>Export</string>
+   </property>
+  </action>
+  <action name="actionCheck">
+   <property name="text">
+    <string>Check</string>
    </property>
   </action>
  </widget>
