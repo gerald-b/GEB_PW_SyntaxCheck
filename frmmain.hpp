@@ -6,6 +6,10 @@
 #include <QFileDialog>
 #include <QMessageBox>
 
+// all includes for checks
+#include "icheck.hpp"
+#include "chkpwlength.hpp"
+
 namespace Ui {
 class FrmMain;
 }
@@ -21,6 +25,7 @@ public:
 private slots:
     void on_actionImport_triggered();
     void on_actionExport_triggered();
+    void on_actionCheck_triggered();
 
 private:
     Ui::FrmMain *ui;
