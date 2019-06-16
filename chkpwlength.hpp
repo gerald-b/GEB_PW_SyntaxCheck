@@ -3,10 +3,10 @@
 
 #include "icheck.hpp"
 
-class chkPWLength : public iCheck
+class ChkPWLength : public iCheck
 {
 public:
-    chkPWLength(int minLength, int maxLength);
+    ChkPWLength(int minLength, int maxLength);
     bool check(QString s) override;
 private:
     int lMax;
