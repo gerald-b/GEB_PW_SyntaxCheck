@@ -162,6 +162,19 @@ void FrmMain::on_actionCheck_triggered()
 
             delete checkrun;
         }
+
+        // CHKContainLowerCase
+        if(ui->cbxContainsLowerCase->isChecked())
+        {
+            checkrun = new ChkContainsLowerCase();
+
+            if (!checkrun->check(ui->lstPassword->item(i)->text()))
+            {
+                ui->lstPassword->item(i)->setBackground(Qt::red);
+            }
+
+            delete checkrun;
+        }
     }
     QMessageBox::information(this,tr("Information"),tr("Check successfully finished"));
 }

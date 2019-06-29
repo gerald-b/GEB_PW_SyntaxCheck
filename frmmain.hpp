@@ -9,6 +9,7 @@
 // all includes for checks
 #include "icheck.hpp"
 #include "chkpwlength.hpp"
+#include "chkcontainslowercase.hpp"
 
 namespace Ui {
 class FrmMain;
