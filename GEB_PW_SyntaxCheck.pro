@@ -25,11 +25,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    chkcontainsnumber.cpp \
         main.cpp \
         frmmain.cpp \
     chkpwlength.cpp
 
 HEADERS += \
+    chkcontainsnumber.hpp \
         frmmain.hpp \
     icheck.hpp \
     chkpwlength.hpp
