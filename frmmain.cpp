@@ -162,6 +162,20 @@ void FrmMain::on_actionCheck_triggered()
 
             delete checkrun;
         }
+
+        // CHKContainNumber
+        if (ui->cbxContainsNumber->isChecked())
+        {
+            checkrun = new ChkContainsNumber();
+
+            if (!checkrun->check(ui->lstPassword->item(i)->text()))
+            {
+                ui->lstPassword->item(i)->setBackground(Qt::red);
+            }
+
+            delete checkrun;
+        }
+
     }
     QMessageBox::information(this,tr("Information"),tr("Check successfully finished"));
 }
