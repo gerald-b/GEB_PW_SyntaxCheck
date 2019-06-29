@@ -100,7 +100,7 @@ font-weight:bold;</string>
         </layout>
        </item>
        <item>
-        <widget class="QCheckBox" name="cbContainsUpperCase">
+        <widget class="QCheckBox" name="cbxContainsUpperCase">
          <property name="text">
           <string>... it contains a uppercase character (at least one)</string>
          </property>
