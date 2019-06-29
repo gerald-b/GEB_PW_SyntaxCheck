@@ -25,11 +25,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    chkcontainsuppercase.cpp \
         main.cpp \
         frmmain.cpp \
     chkpwlength.cpp
 
 HEADERS += \
+    chkcontainsuppercase.hpp \
         frmmain.hpp \
     icheck.hpp \
     chkpwlength.hpp
